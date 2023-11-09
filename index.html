@@ -10,36 +10,40 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles/styles.css" />
-    <link rel="stylesheet" href="styles/overlays.css">
-    <link rel="stylesheet" href="styles/configuration.css">
-    <link rel="stylesheet" href="styles/game.css">
-    <script src="script/scripts.js" defer></script>
+    <link rel="stylesheet" href="styles/overlays.css" />
+    <link rel="stylesheet" href="styles/configuration.css" />
+    <link rel="stylesheet" href="styles/game.css" />
+
+    <script src="script/config.js" defer></script>
+    <script src="script/game.js" defer></script>
+    <script src="script/app.js" defer></script>
+    
     <title>Tic Tac Toe</title>
   </head>
   <body>
-  
-<div id="backdrop"></div>
+    <div id="backdrop"></div>
 
     <header id="main-header">
       <h1>Play Tic Tac Toe</h1>
       <p>Build with HTML , CSS , Javascript</p>
     </header>
 
-     
     <main>
-        <aside class ="modal" id="config-overlay">
-            <h2>Choose Your Name</h2>
-            <form>
-              <div class="form-control">
-                <label for="player-name">Player Name</label>
-                <input type="text" name="playername" id="player-name" />
-              </div>
-              <div>
-                <button type="button" class="btn btn-alt">Cancel</button>
-                <button type="submit" class="btn">Confirm</button>
-              </div>
-            </form>
-          </aside>
+      <aside class="modal" id="config-overlay">
+        <h2>Choose Your Name</h2>
+        <form>
+          <div class="form-control">
+            <label for="player-name">Player Name</label>
+            <input type="text" name="playername" id="player-name" />
+          </div>
+          <div>
+            <button type="button" class="btn btn-alt" id="cancel-config-btn">
+              Cancel
+            </button>
+            <button type="submit" class="btn">Confirm</button>
+          </div>
+        </form>
+      </aside>
 
       <section id="game-configuration">
         <ol>
@@ -71,7 +75,7 @@
 
         <p>It's Your Turn <span id="acive-player-name">PLAYER NAME</span>!</p>
         <ol id="game-board">
-          <li></li>
+          <li class="disabled">X</li>
           <li></li>
           <li></li>
 
