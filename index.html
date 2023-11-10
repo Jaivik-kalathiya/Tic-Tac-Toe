@@ -22,7 +22,7 @@
   </head>
   <body>
     <div id="backdrop"></div>
-
+  
     <header id="main-header">
       <h1>Play Tic Tac Toe</h1>
       <p>Build with HTML , CSS , Javascript</p>
@@ -34,10 +34,11 @@
         <form>
           <div class="form-control">
             <label for="player-name">Player Name</label>
-            <input type="text" name="playername" id="player-name" />
+            <input type="text" name="playername" id="player-name" required />
           </div>
+          <p id="config-errors"></p>
           <div>
-            <button type="button" class="btn btn-alt" id="cancel-config-btn">
+            <button type="reset" class="btn btn-alt" id="cancel-config-btn">
               Cancel
             </button>
             <button type="submit" class="btn">Confirm</button>
@@ -52,7 +53,7 @@
               <h2>Player 1</h2>
               <h3>PLAYER NAME</h3>
               <p class="player-sysmbol">X</p>
-              <button class="btn btn-alt" id="edit-palyer-1-btn">Edit</button>
+              <button class="btn btn-alt" id="edit-player-1-btn">Edit</button>
             </article>
           </li>
           <li>
@@ -60,7 +61,7 @@
               <h2>Player 2</h2>
               <h3>PLAYER NAME</h3>
               <p class="player-sysmbol">O</p>
-              <button class="btn btn-alt" id="edit-palyer-2-btn">Edit</button>
+              <button class="btn btn-alt" id="edit-player-2-btn">Edit</button>
             </article>
           </li>
         </ol>
@@ -80,7 +81,7 @@
           <li></li>
 
           <li></li>
-          <li></li>
+          <li class="disabled">O</li>
           <li></li>
 
           <li></li>

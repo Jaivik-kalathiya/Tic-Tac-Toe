@@ -1,14 +1,29 @@
-const playerConfigOverlayElement=document.querySelector('#config-overlay');
-const backdropElement=document.querySelector("#backdrop");
+// let editPlayer = 0;
+// const player = [
+//   {
+//     name: "",
+//     symbol: "X",
+//   },
+//   {
+//     name: "",
+//     sysmbol: "O",
+//   },
+// ];
 
-const editPlayer1Button=document.querySelector('#edit-palyer-1-btn');
-const editPlayer2Button=document.querySelector('#edit-palyer-2-btn');
-const cancelConfigButton=document.querySelector('#cancel-config-btn');
+const playerConfigOverlayElement = document.getElementById("config-overlay");
+const backdropElement = document.getElementById("backdrop");
+const formElement = document.querySelector("form");
 
+const editPlayer1BtnElement = document.getElementById("edit-player-1-btn");
+const editPlayer2BtnElement = document.getElementById("edit-player-2-btn");
+const cancelConfigBtnElement = document.getElementById("cancel-config-btn");
 
-editPlayer1Button.addEventListener('click',openPlayerConfig);
-editPlayer2Button.addEventListener('click',openPlayerConfig);
+const errorsOutput = document.getElementById("config-errors");
 
+editPlayer1BtnElement.addEventListener("click", openPlayerConfig);
+editPlayer2BtnElement.addEventListener("click", openPlayerConfig);
 
-cancelConfigButton.addEventListener('click',closePlayerConfig);
-backdropElement.addEventListener('click',closePlayerConfig)
+cancelConfigBtnElement.addEventListener("click", closePlayerConfig);
+backdropElement.addEventListener("click", closePlayerConfig);
+
+formElement.addEventListener("submit", savePlayerConfig);
