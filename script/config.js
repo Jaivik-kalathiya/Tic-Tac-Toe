@@ -27,7 +27,7 @@ function savePlayerConfig(event) {
 const updatdePlayerData=document.getElementById('player-'+editedPlayer+'-data');
 updatdePlayerData.children[1].textContent=enteredPlayername; 
 
-player[editedPlayer-1].name=enteredPlayername;
+players[editedPlayer-1].name=enteredPlayername;
 
 closePlayerConfig();
 
