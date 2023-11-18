@@ -20,9 +20,19 @@ function selectGameField (event){
   if(event.target.tagName!=='LI'){ // avoiding the clicks on the gap between the blocks  
     return;
   }
+    const selectedField=event.target;
 
-    event.target.textContent=players[activePlayer].symbol;
-    event.target.classList.add('disabled');
+
+    selectedField.textContent=players[activePlayer].symbol;
+    selectedField.classList.add('disabled');
+   
+
+    const selectedColumn=selectedField.dataset.col-1;  // here we don't have to write "+" bcz we do the mathematical opr so it will convert string to the number.Although we can also add "+".
+    const selectedRow=selectedField.dataset.row-1;
+
+    gameData[selectedRow][selectedColumn];
+
+
     switchPlayer();
 
 }
