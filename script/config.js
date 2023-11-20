@@ -1,34 +1,37 @@
 function openPlayerConfig(event) {
-editedPlayer = +event.target.dataset.playerid; // +"1" => 1
-// if you have added the "-" btw the dataset name then access it like "dataset['player-id']".
-  
-  playerConfigOverlayElement.style.display = 'block';
-  backdropElement.style.display = 'block';
+  editedPlayer = +event.target.dataset.playerid; // +"1" => 1
+  // if you have added the "-" btw the dataset name then access it like "dataset['player-id']".
+
+  playerConfigOverlayElement.style.display = "block";
+  backdropElement.style.display = "block";
 }
 
 function closePlayerConfig() {
-  playerConfigOverlayElement.style.display = 'none';
-  backdropElement.style.display = 'none';
-  formElement.firstElementChild.classList.remove('error');
-  errorsOutputElement.textContent = '';
-  formElement.firstElementChild.lastElementChild.value='';
+  playerConfigOverlayElement.style.display = "none";
+  backdropElement.style.display = "none";
+  formElement.firstElementChild.classList.remove("error");
+  errorsOutputElement.textContent = "";
+  formElement.firstElementChild.lastElementChild.value = "";
 }
 
 function savePlayerConfig(event) {
   event.preventDefault();
   const formData = new FormData(event.target);
-  const enteredPlayername = formData.get('playername').trim(); // '      ' => ''
-
-  if (!enteredPlayername) { // enteredPlayername === ''
-    event.target.firstElementChild.classList.add('error');
-    errorsOutputElement.textContent = 'Please enter a valid name!';
+  const enteredPlayername = formData.get("playername").trim(); // '      ' => ''
+  
+  if (!enteredPlayername) {
+    // enteredPlayername === ''
+    event.target.firstElementChild.classList.add("error");
+    errorsOutputElement.textContent = "Please enter a valid name!";
     return;
   }
-const updatdePlayerData=document.getElementById('player-'+editedPlayer+'-data');
-updatdePlayerData.children[1].textContent=enteredPlayername; 
 
-players[editedPlayer-1].name=enteredPlayername;
+  const updatdePlayerData = document.getElementById(
+    "player-" + editedPlayer + "-data"
+  );
+  updatdePlayerData.children[1].textContent = enteredPlayername;
 
-closePlayerConfig();
+  players[editedPlayer - 1].name = enteredPlayername;
 
+  closePlayerConfig();
 }
